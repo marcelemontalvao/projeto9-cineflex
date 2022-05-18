@@ -1,4 +1,40 @@
-header > p {
-    color: #E8833A
+* {
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif
+}
+
+header {
+    background: #C3CFD9;
+}
+
+header > p {
+    text-align: center;
+    padding: 15px 0;
+    color: #E8833A;
+    font-size: 34px;
+    
+}
+
+.container > p {
+    text-align: center;
+    padding: 45px 0;
+    color: #293845;
+    font-size: 24px;
+}
+
+.container > .image {
+    width: 145px;
+    height: 209px;
+    background: #FFFFFF;
+    padding-left: 30px;
+    display: flex;
+}
+
+.container > img {
+    padding: 8px;
+    width: 129px;
+    height: 193px;
+}
