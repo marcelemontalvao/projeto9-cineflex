@@ -4,23 +4,21 @@ import axios from "axios"
 
 export default function SelecionarHorario () {
     const {idFilme} = useParams()
-    const [horario, setHorario] = useState({})
+    const [horario, setHorario] = useState([])
     useEffect(() => {
         const request = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`)
-        request.then((response) => {
-            setHorario(response.data)
-        })
-    })
+        request.then((response) => {setHorario(response.data.days)
+        }).catch("carregando") }, []
+   )
 
     return ( 
         <>
             <div className="container">
                 <p>Selecione o horário</p>
             </div>
-            <div>{horario.weekday}</div>
-            <div>{horario.date}</div>
-            <footer>
+                {horario.map((dia, index) => <span key={index} > {dia.weekday} - {dia.date}  </span>) }
                 
+            <footer>               
             </footer>
         </>
   
