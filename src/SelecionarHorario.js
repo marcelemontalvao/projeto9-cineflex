@@ -1,7 +1,16 @@
 export default function SelecionarHorario () {
-    return (
-        <div>
-            <p>aaaaaaaaaaaaaaaaaaaa</p>
-        </div>
+    return ( 
+        <>
+            <header>
+                <p>CINEFLEX</p>
+            </header>
+            <div className="container">
+                <p>Selecione o horário</p>
+            </div>
+            <footer>
+                
+            </footer>
+        </>
+  
     )
 }

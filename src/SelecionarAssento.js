@@ -1,7 +1,12 @@
 export default function SelecionarAssento () {
     return (
-        <div>
-            aaaaaaaaaaaaaaaaaaaa
-        </div>
+        <>
+            <header>
+                <p>CINEFLEX</p>
+            </header>
+            <div className="container">
+                <p>Selecione o(s) assento(s)</p>
+            </div>
+        </>
     )
 }
