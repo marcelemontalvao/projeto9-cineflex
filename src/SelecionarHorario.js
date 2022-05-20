@@ -1,6 +1,26 @@
 import {useState, useEffect} from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import axios from "axios"
+import styled from "styled-components"
+
+const Container = styled.div`
+p {
+    text-align: center;
+    padding: 45px 0;
+    color: #293845;
+    font-size: 24px;
+}
+`
+const Sessao = styled.div `
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    padding-left: 15px;
+button {
+    width: 60px;
+    height: 30px;
+} 
+` 
 
 export default function SelecionarHorario () {
     const {idFilme} = useParams()
@@ -13,14 +33,13 @@ export default function SelecionarHorario () {
 
     return ( 
         <>
-            <div className="container">
+            <Container>
                 <p>Selecione o horário</p>
-            </div>
-                {horario.map((dia, index) => <span key={index} > {dia.weekday} - {dia.date}  </span>) }
-                
+            </Container>
+                {horario.map((dia, index) => <Sessao key={index} > {dia.weekday} - {dia.date}  <Link to={`/assentos/${dia.id}`}><div className="sessoes-horarios">{dia.showtimes.map((showtimes , index) => <button key={index}> {showtimes.name}</button>)}</div></Link>
+                 </Sessao>) }
             <footer>               
             </footer>
         </>
-  
     )
 }
