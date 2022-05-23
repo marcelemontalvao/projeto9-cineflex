@@ -18,3 +18,9 @@ body {
     display: flex;
     align-items: center;
 }
+
+.flexD {
+    flex-direction: column
+}
+    
+
